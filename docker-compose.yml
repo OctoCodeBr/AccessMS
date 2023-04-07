@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./AccessMS/Dockerfile
+    # image: gestaoAcademias/accessMS
+    container_name: gestaoAcademias_accessMS
+    ports:
+      - 8090:80
+  sqlserver:
+    container_name: sqlserver
+    image: "mcr.microsoft.com/azure-sql-edge"
+    restart: always
+    ports:
+      - "1433:1433"
+    volumes:
+      - "./.data/mssql:/var/opt/mssql"
+    environment:
+      SA_PASSWORD: "Guilherme@2023"
+      ACCEPT_EULA: "Y"
