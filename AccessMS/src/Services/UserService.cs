@@ -7,7 +7,7 @@ namespace AccessMS.Services;
 public class UserService: IService {
     
     private readonly UserRepository userRepository;
-
+ 
     public UserService(UserRepository _userRepository) =>
         (userRepository) = (_userRepository);
 
