@@ -10,6 +10,7 @@ public class AccessDbContext: DbContext {
     }
 
     public virtual DbSet<UserEntity> Users => Set<UserEntity>();
+    public virtual DbSet<GymEntity> Gyms => Set<GymEntity>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
 
